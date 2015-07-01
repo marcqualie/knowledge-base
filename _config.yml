@@ -5,7 +5,6 @@ markdown: kramdown
 collections:
   articles:
     output: true
-    layout: article
     permalink: /articles/:path
 
 exclude:

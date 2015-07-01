@@ -11,6 +11,41 @@
   </head>
   <body>
 
+    <br/>
+    <br/>
+
+    <div class="container">
+
+      <h1><a href="/">Knowledge Base</a></h1>
+      <p>Everything you need to know about all the things</p>
+
+      <br/>
+      <br/>
+
+      <div class="row">
+        <div class="col-md-4">
+          <form action="/search">
+            <div class="input-group">
+              <input type="text" class="form-control" name="q" value="" placeholder="How do I.. ?"/>
+              <div class="input-group-btn">
+                <button type="submit" class="btn btn-primary">
+                  Search
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+
+    </div>
+
+    <br/>
+    <br/>
+
+    <hr/>
+
+    <br/>
+
     <div class="container">
       {{ content }}
     </div>

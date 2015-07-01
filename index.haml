@@ -4,36 +4,11 @@ layout: default
 
 .container
 
-  %br
-  %br
+{% for article in site.articles %}
 
-  %h1 Knowledge Base
-  %p Everything you need to know about all the things
+  %h3
+    %a{href: "{{ article.url }}"}
+      {{ article.title }}
+  %p {{ article.excerpt }}
 
-  %br
-  %br
-
-  .row
-    .col-md-4
-      %form
-        .input-group
-          %input.form-control{type: 'text', value: '', placeholder: 'How do I..'}
-          .input-group-btn
-            %button.btn.btn-primary{type: 'submit'}
-              Search
-
-  %br
-  %br
-
-  %hr
-
-  %br
-
-  {% for article in site.articles %}
-
-    %h3
-      %a{href: "{{ article.url }}"}
-        {{ article.title }}
-    %p {{ article.excerpt }}
-
-  {% endfor %}
+{% endfor %}
