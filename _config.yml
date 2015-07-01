@@ -1,0 +1,7 @@
+title: Givey Knowledge Base
+
+markdown: kramdown
+
+exclude:
+- bin
+- Gemfile*
