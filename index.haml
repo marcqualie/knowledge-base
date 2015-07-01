@@ -21,3 +21,19 @@ layout: default
           .input-group-btn
             %button.btn.btn-primary{type: 'submit'}
               Search
+
+  %br
+  %br
+
+  %hr
+
+  %br
+
+  {% for article in site.articles %}
+
+    %h3
+      %a{href: "{{ article.url }}"}
+        {{ article.title }}
+    %p {{ article.excerpt }}
+
+  {% endfor %}
