@@ -10,3 +10,9 @@ collections:
 exclude:
 - bin
 - Gemfile*
+- assets/bower
+- package.json
+- bower.json
+- node_modules
+- npm-debug.log
+- Gruntfile.js
