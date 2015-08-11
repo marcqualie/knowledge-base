@@ -1,0 +1,31 @@
+name: Users
+actions:
+
+  - operationId: filterUsers
+    summary: Filter Users
+    method: GET
+    path: /users
+    parameters:
+    - name: ids
+      in: query
+      type: array
+      items:
+        type: 'integer'
+      description: List of IDs
+    - name: email
+      in: query
+      type: string
+      description: Email address for exact match lookup
+    - name: business_id
+      in: query
+      type: string
+      description: ID of a Business
+
+  - operationId: getUser
+    summary: Get a User
+    method: GET
+    path: /users/:id
+    parameters:
+    - name: id
+      type: string
+      description: ID of a User

@@ -6,10 +6,29 @@ actions:
     method: GET
     path: /donations
     parameters:
+    - name: business_id
+      in: query
+      type: string
+      description: GiveyTag or ID of a Business
     - name: charity_id
       in: query
       type: string
       description: GiveyTag or ID of a Charity
+    - name: content_id
+      in: query
+      type: string
+      description: ID of a piece of content
+    - name: user_id
+      in: query
+      type: string
+      description: GiveyTag or ID of a User
+    responses:
+      401:
+        description: Invalid Access Token
+      200:
+        description: Valid Donations were found
+      404:
+        description: No Donations matched your query
 
   - operationId: getDonation
     summary: Get a Donation

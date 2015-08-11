@@ -1,0 +1,25 @@
+name: Content
+actions:
+
+  - operationId: getContent
+    summary: Get a piece of Content
+    method: GET
+    path: /contents/:slug
+    parameters:
+    - name: slug
+      type: string
+      description: Unique slug for the piece of content
+
+  - operationId: createContent
+    summary: Create a piece of Content
+    method: POST
+    path: /contents
+    parameters:
+    - name: slug
+      type: string
+      in: body
+      description: Unique slug for the piece of content
+    - name: url
+      type: string
+      in: body
+      description: Unique slug for the piece of content
