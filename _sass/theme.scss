@@ -1,7 +1,36 @@
 .page-header {
   background: #f9f9f9;
   margin: 0 auto 30px auto;
-  padding-bottom: 60px;
+  padding-bottom: 0;
   padding-top: 60px;
   border-bottom: 1px solid $brand-primary;
+}
+.navigation {
+  margin-top: 60px;
+  border-top: 1px solid $brand-primary;
+  ul {
+    float: left;
+    margin: 0;
+    padding: 0;
+    width: 70%;
+    li {
+      display: inline-block;
+      a {
+        display: block;
+        padding: 12px 15px;
+        border-right: 1px solid #e5e5e5;
+      }
+    }
+  }
+  form {
+    float: right;
+    margin: 0;
+    width: 30%;
+    .form-control {
+      @include box-shadow(none);
+      background: none;
+      border: none;
+      height: 42px;
+    }
+  }
 }
