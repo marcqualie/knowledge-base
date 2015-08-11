@@ -29,6 +29,23 @@ $logo-size: 48px;
         height: 100%;
       }
     }
+    .contact-details {
+      height: 108px;
+      list-style: none;
+      padding: 25px 0;
+      position: absolute;
+      right: 200px;
+      top: 0;
+      margin: 0;
+      li {
+        color: #666;
+        font-size: 14px;
+        line-height: 24px;
+        span {
+          display: inline-block;
+        }
+      }
+    }
   }
 }
 .navigation {
