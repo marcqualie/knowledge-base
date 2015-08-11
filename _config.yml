@@ -7,6 +7,10 @@ collections:
     output: true
     permalink: /articles/:path/
 
+gostatic:
+  build:
+    command: rake build
+
 exclude:
 - bin
 - Gemfile*
