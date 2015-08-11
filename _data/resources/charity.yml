@@ -1,0 +1,12 @@
+name: Charities
+actions:
+  - id: charity:index
+    method: GET
+    path: /charities
+  - id: charity:show
+    method: GET
+    path: /charities/:id
+    params:
+      id:
+        type: string
+        description: GiveyTag or ID of the charity

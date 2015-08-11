@@ -1,0 +1,12 @@
+name: Donations
+actions:
+  - id: donation:index
+    method: GET
+    path: /donations
+  - id: donation:show
+    method: GET
+    path: /donations/:id
+    params:
+      id:
+        type: string
+        description: ID of the donation
