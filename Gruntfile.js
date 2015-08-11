@@ -40,6 +40,7 @@ module.exports = function (grunt) {
     watch: {
       source: {
         files: [
+          "assets/images/*",
           "_assets/**/*",
           "_layouts/**/*",
           "_articles/**/*",

@@ -1,11 +1,13 @@
 $logo-size: 48px;
 
 .page-header {
-  background: #f9f9f9;
   border-bottom: 1px solid $brand-primary;
   margin: 0 auto 30px auto;
   padding: 0;
   .container-fluid {
+    background-image: url(/assets/images/explore.png);
+    background-position: right bottom;
+    color: #fff;
     height: $logo-size + $grid-gutter-width * 2;
     padding: $grid-gutter-width;
     padding-left: $logo-size + $grid-gutter-width * 2;
@@ -30,6 +32,7 @@ $logo-size: 48px;
   }
 }
 .navigation {
+  background: #f7f7f7;
   border-top: 1px solid $brand-primary;
   ul {
     float: left;
