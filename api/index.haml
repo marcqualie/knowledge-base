@@ -23,7 +23,7 @@ layout: default
               %ul.nav.nav-stacked
                 {% for action in resource[1].actions %}
                 %li
-                  %a{href: "#resources-{{action.id}}"} {{action.method}} {{action.path}}
+                  %a{href: "#resources-{{action.operationId}}"} {{action.method}} {{action.path}}
                 {% endfor %}
             {% endfor %}
     .col-sm-9
@@ -42,13 +42,26 @@ layout: default
       %h2 Resources
       %hr
       {% for resource in site.data.resources %}
-        %h3
-          %a{href: "#resources-{{resource[0]}}", name: "resources-{{resource[0]}}"} {{resource[1].name}}
-        {% for action in resource[1].actions %}
-        .panel.panel-default
-          .panel-heading
-            %h5.panel-title
-              %a{href: "#resources-{{action.id}}", name: "resources-{{action.id}}"} {{action.method}} {{action.path}}
-          .panel-body
-        {% endfor %}
+      %h3
+        %a{href: "#resources-{{resource[0]}}", name: "resources-{{resource[0]}}"} {{resource[1].name}}
+      {% for action in resource[1].actions %}
+      .panel.panel-default
+        .panel-heading
+          %h5.panel-title
+            %a{href: "#resources-{{action.operationId}}", name: "resources-{{action.operationId}}"} {{action.method}} {{action.path}}
+        .panel-body
+          %h6 Parameters
+          {% if action.parameters %}
+          %table.table
+            %tbody
+            {% for parameter in action.parameters %}
+              %tr
+                %td{width: 160} {{parameter.name}}
+                %td.text-muted{width: 160} {{parameter.type}}
+                %td {{parameter.description}}
+            {% endfor %}
+          {% else %}
+          %small.text-muted This action does not accept any parameters
+          {% endif %}
+      {% endfor %}
       {% endfor %}

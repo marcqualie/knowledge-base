@@ -1,12 +1,16 @@
 name: Charities
 actions:
-  - id: charity:index
+
+  - operationId: filterCharities
+    summary: Filter Charities
     method: GET
     path: /charities
-  - id: charity:show
+
+  - operationId: getCharity
+    summary: Get a Charity
     method: GET
     path: /charities/:id
-    params:
-      id:
-        type: string
-        description: GiveyTag or ID of the charity
+    paramaters:
+    - name: id
+      type: string
+      description: GiveyTag or ID of the charity

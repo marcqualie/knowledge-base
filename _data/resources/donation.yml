@@ -1,12 +1,21 @@
 name: Donations
 actions:
-  - id: donation:index
+
+  - operationId: filterDonations
+    summary: Filter Donations
     method: GET
     path: /donations
-  - id: donation:show
+    parameters:
+    - name: charity_id
+      in: query
+      type: string
+      description: GiveyTag or ID of a Charity
+
+  - operationId: getDonation
+    summary: Get a Donation
     method: GET
     path: /donations/:id
-    params:
-      id:
-        type: string
-        description: ID of the donation
+    parameters:
+    - name: id
+      type: string
+      description: ID of a Donation
