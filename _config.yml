@@ -16,6 +16,7 @@ gostatic:
 exclude:
 - bin
 - Gemfile*
+- Rakefile
 - assets/bower
 - package.json
 - bower.json
