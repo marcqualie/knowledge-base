@@ -6,8 +6,11 @@ module.exports = function (grunt) {
   grunt.initConfig({
 
     exec: {
+      precompile: {
+        cmd: "rake assets:precompile"
+      },
       build: {
-        cmd: "rake build"
+        cmd: "bundle exec jekyll build --trace"
       }
     },
 
@@ -25,6 +28,7 @@ module.exports = function (grunt) {
           "*.md"
         ],
         tasks: [
+          'exec:precompile',
           'exec:build'
         ]
       }
@@ -33,6 +37,7 @@ module.exports = function (grunt) {
   });
 
   grunt.registerTask('serve', [
+    'exec:precompile',
     'exec:build',
     'watch',
   ]);
