@@ -23,9 +23,8 @@ module.exports = function (grunt) {
           "_articles/**/*",
           "_data/**/*",
           "_config.yml",
-          "*.html",
-          "*.haml",
-          "*.md"
+          "**/*.haml",
+          "**/*.md"
         ],
         tasks: [
           'exec:precompile',

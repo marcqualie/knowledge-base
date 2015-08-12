@@ -1,0 +1,19 @@
+businesses:
+  name: Businesses
+  description: Givey for Business related articles
+
+charities:
+  name: Charity
+  description: Everything a Charity needs to know to get started
+
+projects:
+  name: Projects
+  description: Everything a Project needs to know to get started
+
+giving:
+  name: Giving
+  description: What you should know as a donor
+
+general:
+  name: General
+  description: Useful hints and tips for using Givey
