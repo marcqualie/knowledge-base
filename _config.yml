@@ -9,7 +9,8 @@ collections:
 
 gostatic:
   build:
-    command: rake build
+    command:
+    - rake build
 
 exclude:
 - bin
