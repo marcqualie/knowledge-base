@@ -29,3 +29,19 @@ actions:
     - name: id
       type: string
       description: ID of a User
+
+  - operationId: createUser
+    summary: Create a User
+    method: POST
+    path: /users
+    parameters:
+    - name: email
+      type: string
+      required: true
+      description: User's unique email address
+    - name: first_name
+      type: string
+      description: User's first name
+    - name: last_name
+      type: string
+      description: User's last name
