@@ -63,5 +63,11 @@ layout: default
           {% else %}
           %small.text-muted This action does not accept any parameters
           {% endif %}
+
+          {% if action.responses[200].examples['application/json'] %}
+          %h6 Example Response
+          %code
+            %pre {{ action.responses[200].examples['application/json'] }}
+          {% endif %}
       {% endfor %}
       {% endfor %}

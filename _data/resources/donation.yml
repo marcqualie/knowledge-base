@@ -23,10 +23,37 @@ actions:
       type: string
       description: GiveyTag or ID of a User
     responses:
-      401:
-        description: Invalid Access Token
       200:
         description: Valid Donations were found
+        examples:
+          "application/json":
+            meta:
+              total_amounts:
+                GBP: 1000
+                USD: 500
+              count: 3
+              pages: 1
+            donations:
+            - id: 42645
+              activity_id: "MTQyNzc0NTczMk5ibTU"
+              summary: "Marc gave £1 to DogsTrust"
+              summary_html: "<a href='https://www.givey.com/marcqualie'>Marc</a> gave £1 to <a href='https://www.givey.com/dogstrust'>DogsTrust</a>"
+              currency: GBP
+              amount: 100
+              matched_amount: 100
+              giftaid_amount: 25
+              charity_id: 20
+              user_id: 1439
+              content:
+                id: "59d118ab"
+                url: "https://instagram.com/p/03S8QmE9Rc/"
+                title: Cosy Watson
+                image: https://res.cloudinary.com/givey/image/upload/v1428080937/media/59d118ab.jpg
+              paid_at: 2015-03-30T20:02:12.803Z
+              created_at: 2015-03-30T20:02:15.917Z
+              updated_at: 2015-03-30T20:02:15.917Z
+      401:
+        description: Invalid Access Token
       404:
         description: No Donations matched your query
 
