@@ -66,8 +66,8 @@ layout: default
 
           {% if action.responses[200].examples['application/json'] %}
           %h6 Example Response
-          %code
-            %pre {{ action.responses[200].examples['application/json'] }}
+          %pre
+            %code {{ action.responses[200].examples['application/json'] | pretty_json }}
           {% endif %}
       {% endfor %}
       {% endfor %}
