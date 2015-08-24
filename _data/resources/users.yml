@@ -1,0 +1,83 @@
+name: Users
+actions:
+
+  - operationId: filterUsers
+    summary: Filter Users
+    method: GET
+    path: /users
+    parameters:
+    - name: ids
+      in: query
+      type: array
+      items:
+        type: 'integer'
+      description: List of IDs
+    - name: email
+      in: query
+      type: string
+      description: Email address for exact match lookup
+    - name: business_id
+      in: query
+      type: string
+      description: ID of a Business
+
+  - operationId: getUser
+    summary: Get a User
+    method: GET
+    path: /users/:id
+    parameters:
+    - name: id
+      type: string
+      description: ID of a User
+
+  - operationId: createUser
+    summary: Create a User
+    method: POST
+    path: /users
+    parameters:
+    - name: givey_tag
+      type: string
+      summary: Unique username for the account.
+      description: Unique username for the account. One will be generated if this is not specified.
+    - name: email
+      type: string
+      required: true
+      description: User's unique email address
+    - name: secondary_email
+      type: string
+      required: true
+      summary: Seondary email for user's account
+      description: Seondary email for user's account. This is usually used to link a business account.
+    - name: first_name
+      type: string
+      description: User's first name
+    - name: last_name
+      type: string
+      description: User's last name
+
+  - operationId: updateUser
+    summary: Update a User
+    method: PUT
+    path: /users/:id
+    parameters:
+    - name: id
+      type: string
+      required: true
+      description: ID or GiveyTag of a user account
+    - name: givey_tag
+      type: string
+      description: Unique username for the account. One will be generated if this is not specified.
+    - name: email
+      type: string
+      required: true
+      description: User's unique email address
+    - name: secondary_email
+      type: string
+      required: true
+      description: Seondary email for user's account. This is usually used to link a business account.
+    - name: first_name
+      type: string
+      description: User's first name
+    - name: last_name
+      type: string
+      description: User's last name

@@ -1,11 +1,9 @@
 ---
+title: FAQ
 layout: default
 ---
 
 .container
-  .page-heading
-    %h3
-      %a{href: '/faq'} FAQ
   .row
   {% for category in site.data.categories %}
     {% assign articles = site.articles | where:"category", category[0] %}

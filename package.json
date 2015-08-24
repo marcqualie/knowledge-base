@@ -1,0 +1,19 @@
+{
+  "name": "givey-knowledge-base",
+  "version": "0.0.1",
+  "description": "Givey Knowledge Base",
+  "main": "_site/index.html",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/givey/knowledge-base.git"
+  },
+  "author": "Marc Qualie",
+  "license": "MIT",
+  "homepage": "https://support.givey.com",
+  "dependencies": {},
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-exec": "^0.4.6"
+  }
+}

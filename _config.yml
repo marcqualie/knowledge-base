@@ -5,8 +5,22 @@ markdown: kramdown
 collections:
   articles:
     output: true
-    permalink: /articles/:path
+    permalink: /articles/:path/
+
+gostatic:
+  build:
+    command:
+    - rake assets:precompile
+    - bundle exec jekyll build --trace --destination $SITE_DIR --config=_config.production.yml
 
 exclude:
 - bin
 - Gemfile*
+- Rakefile
+- assets/bower
+- package.json
+- bower.json
+- node_modules
+- npm-debug.log
+- Gruntfile.js
+- vendor

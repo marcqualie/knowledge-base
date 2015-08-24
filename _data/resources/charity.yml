@@ -1,0 +1,28 @@
+name: Charities
+actions:
+
+  - operationId: filterCharities
+    summary: Filter Charities
+    description: All charities will be displayed unless a filter is provided. If no matches are found for a filter no charities will be returned
+    method: GET
+    path: /charities
+    parameters:
+    - name: ids
+      in: query
+      type: array
+      items:
+        type: integer
+      description: Charity IDs
+    - name: business_id
+      in: query
+      type: string
+      description: Business ID or GiveyTag
+
+  - operationId: getCharity
+    summary: Get a Charity
+    method: GET
+    path: /charities/:id
+    parameters:
+    - name: id
+      type: string
+      description: GiveyTag or ID of the charity
