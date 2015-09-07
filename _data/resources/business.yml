@@ -1,0 +1,11 @@
+name: Businesses
+actions:
+
+  - operationId: getCharity
+    summary: Get a Business
+    method: GET
+    path: /businesses/:id
+    parameters:
+    - name: id
+      type: string
+      description: GiveyTag or ID of a Business

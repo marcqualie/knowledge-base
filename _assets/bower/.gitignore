@@ -1,0 +1,12 @@
+bootstrap-sass/assets/fonts/*
+fontawesome/css/*
+fontawesome/less/*
+jquery/src/*
+*/.bower.json
+*/.gitattributes
+*/.gitignore
+*/.npmignore
+*/*.md
+*/*.txt
+*/LICENSE
+*/README

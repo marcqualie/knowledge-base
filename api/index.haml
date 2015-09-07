@@ -1,0 +1,73 @@
+---
+title: API Documentation
+layout: default
+---
+.container-fluid
+  .row
+    .col-sm-3
+      .sidebar
+        .panel.panel-primary
+          .panel-heading
+            %h3.panel-title Getting Started
+          %ul.list-group
+            %a.list-group-item{href: "#developer-portal"} Developer Portal
+            %a.list-group-item{href: "#authentication"} Authentication
+            %a.list-group-item{href: "#accepting-donations"} Accepting Donations
+        .panel.panel-primary
+          .panel-heading
+            %h3.panel-title Resources
+          %ul.nav.nav-stacked
+            {% for resource in site.data.resources %}
+            %li
+              %a{href: "#resources-{{resource[0]}}"} {{resource[1].name}}
+              %ul.nav.nav-stacked
+                {% for action in resource[1].actions %}
+                %li
+                  %a{href: "#resources-{{action.operationId}}"} {{action.method}} {{action.path}}
+                {% endfor %}
+            {% endfor %}
+    .col-sm-9
+      %h2 Getting Started
+      %hr
+      %p
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+      %br
+      %br
+      %h2 Resources
+      %hr
+      {% for resource in site.data.resources %}
+      %h3
+        %a{href: "#resources-{{resource[0]}}", name: "resources-{{resource[0]}}"} {{resource[1].name}}
+      {% for action in resource[1].actions %}
+      .panel.panel-default
+        .panel-heading
+          %h5.panel-title
+            %a{href: "#resources-{{action.operationId}}", name: "resources-{{action.operationId}}"} {{action.method}} {{action.path}}
+        .panel-body
+          %h6 Parameters
+          {% if action.parameters %}
+          %table.table
+            %tbody
+            {% for parameter in action.parameters %}
+              %tr
+                %td{width: 160} {{parameter.name}}
+                %td.text-muted{width: 160} {{parameter.type}}
+                %td {{parameter.description}}
+            {% endfor %}
+          {% else %}
+          %small.text-muted This action does not accept any parameters
+          {% endif %}
+
+          {% if action.responses[200].examples['application/json'] %}
+          %h6 Example Response
+          %pre
+            %code {{ action.responses[200].examples['application/json'] | pretty_json }}
+          {% endif %}
+      {% endfor %}
+      {% endfor %}
