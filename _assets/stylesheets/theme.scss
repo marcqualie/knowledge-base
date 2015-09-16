@@ -126,3 +126,11 @@ $logo-size: 48px;
     }
   }
 }
+
+li > a {
+  color: #666;
+
+  .fa {
+    color: $brand-primary;
+  }
+}
