@@ -27,10 +27,8 @@ $logo-size: 48px;
     }
 
     .logo {
+      display: inline-block;
       height: $logo-size;
-      left: $grid-gutter-width;
-      position: absolute;
-      top: $grid-gutter-width;
       width: $logo-size;
 
       img {
@@ -43,9 +41,6 @@ $logo-size: 48px;
       height: 108px;
       list-style: none;
       padding: 25px 0;
-      position: absolute;
-      right: 200px;
-      top: 0;
       margin: 0;
 
       li {
