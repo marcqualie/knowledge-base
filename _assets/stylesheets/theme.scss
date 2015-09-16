@@ -1,46 +1,52 @@
 $logo-size: 48px;
+$grey: #666;
 
 .page-header {
-  border-bottom: 1px solid $brand-primary;
+  border-bottom: 1px solid darken($brand-primary, 20%);
   margin: 0 auto 30px auto;
   padding: 0;
+
   .container-fluid {
-    background-image: url(/assets/images/explore.png);
-    background-position: right bottom;
+    background-color: #f2f2f2;
     color: #fff;
-    height: $logo-size + $grid-gutter-width * 2;
-    padding: $grid-gutter-width;
-    padding-left: $logo-size + $grid-gutter-width * 2;
+    padding: $grid-gutter-width $grid-gutter-width/2;
+
+    @media (min-width: $screen-sm-min) {
+      background-image: url(/assets/images/explore.png);
+      background-position: right bottom;
+      background-repeat: no-repeat;
+    }
+
     h1 {
       font-size: 20px;
       margin: 0 0 5px 0;
     }
+
     p {
-      color: #999;
+      color: $grey;
     }
+
     .logo {
+      display: inline-block;
       height: $logo-size;
-      left: $grid-gutter-width;
-      position: absolute;
-      top: $grid-gutter-width;
       width: $logo-size;
+
       img {
         width: 100%;
         height: 100%;
       }
     }
+
     .contact-details {
-      height: 108px;
       list-style: none;
-      padding: 25px 0;
-      position: absolute;
-      right: 200px;
-      top: 0;
+      padding: 0;
       margin: 0;
+
       li {
-        color: #666;
+        color: $grey;
         font-size: 14px;
         line-height: 24px;
+
         span {
           display: inline-block;
         }
@@ -48,16 +54,20 @@ $logo-size: 48px;
     }
   }
 }
+
 .navigation {
-  background: #f7f7f7;
-  border-top: 1px solid $brand-primary;
+  background: #f2f2f2;
+  border-top: 1px solid darken($brand-primary, 20%);
+
   ul {
     float: left;
     margin: 0;
     padding: 0;
     width: 70%;
+
     li {
       display: inline-block;
+
       a {
         display: block;
         padding: 12px 15px;
@@ -65,16 +75,19 @@ $logo-size: 48px;
       }
     }
   }
+
   form {
     float: right;
     margin: 0;
     width: 30%;
     position: relative;
+
     .fa-search {
       position: absolute;
       top: 14px;
       left: 14px;
     }
+
     .form-control {
       @include box-shadow(none);
       background: none;
@@ -83,6 +96,7 @@ $logo-size: 48px;
       border-radius: 0;
       height: 43px;
       padding-left: 36px;
+
       &:focus {
         @include box-shadow(inset 0 0 2px lighten($brand-primary, 10%));
         border-left: 1px solid $brand-primary;
@@ -92,21 +106,37 @@ $logo-size: 48px;
 }
 
 .sidebar {
-  & .panel > .nav-stacked {
+  .panel > .nav-stacked {
     &, a {
       color: #333;
     }
-    & > li > a {
+
+    > li > a {
       font-weight: bold;
       background: #f7f7f7;
       border-bottom: 1px solid #e5e5e5;
     }
+
     .nav-stacked {
       &, a {
-        color: #666;
+        color: $grey;
       }
+
       font-size: .8em;
       font-family: monospace;
     }
+  }
+}
+
+li > a {
+  color: $grey;
+  transition: color 0.15s;
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  .fa {
+    color: $brand-primary;
   }
 }
