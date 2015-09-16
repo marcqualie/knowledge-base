@@ -6,12 +6,16 @@ $logo-size: 48px;
   padding: 0;
 
   .container-fluid {
-    background-image: url(/assets/images/explore.png);
-    background-position: right bottom;
     color: #fff;
     height: $logo-size + $grid-gutter-width * 2;
     padding: $grid-gutter-width;
     padding-left: $logo-size + $grid-gutter-width * 2;
+
+    @media (min-width: $screen-sm-min) {
+      background-image: url(/assets/images/explore.png);
+      background-position: right bottom;
+      background-repeat: no-repeat;
+    }
 
     h1 {
       font-size: 20px;
