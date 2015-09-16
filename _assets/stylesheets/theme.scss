@@ -129,6 +129,11 @@ $logo-size: 48px;
 
 li > a {
   color: #666;
+  transition: color 0.15s;
+
+  &:hover {
+    text-decoration: none;
+  }
 
   .fa {
     color: $brand-primary;
