@@ -1,7 +1,8 @@
 $logo-size: 48px;
+$grey: #666;
 
 .page-header {
-  border-bottom: 1px solid $brand-primary;
+  border-bottom: 1px solid darken($brand-primary, 20%);
   margin: 0 auto 30px auto;
   padding: 0;
 
@@ -22,7 +23,7 @@ $logo-size: 48px;
     }
 
     p {
-      color: #666;
+      color: $grey;
     }
 
     .logo {
@@ -42,7 +43,7 @@ $logo-size: 48px;
       margin: 0;
 
       li {
-        color: #666;
+        color: $grey;
         font-size: 14px;
         line-height: 24px;
 
@@ -55,8 +56,8 @@ $logo-size: 48px;
 }
 
 .navigation {
-  background: #f7f7f7;
-  border-top: 1px solid $brand-primary;
+  background: #f2f2f2;
+  border-top: 1px solid darken($brand-primary, 20%);
 
   ul {
     float: left;
@@ -118,7 +119,7 @@ $logo-size: 48px;
 
     .nav-stacked {
       &, a {
-        color: #666;
+        color: $grey;
       }
 
       font-size: .8em;
@@ -128,7 +129,7 @@ $logo-size: 48px;
 }
 
 li > a {
-  color: #666;
+  color: $grey;
   transition: color 0.15s;
 
   &:hover {
