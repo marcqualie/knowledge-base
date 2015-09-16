@@ -6,6 +6,7 @@ $logo-size: 48px;
   padding: 0;
 
   .container-fluid {
+    background-color: #f2f2f2;
     color: #fff;
     padding: $grid-gutter-width $grid-gutter-width/2;
 
@@ -21,7 +22,7 @@ $logo-size: 48px;
     }
 
     p {
-      color: #999;
+      color: #666;
     }
 
     .logo {
