@@ -4,23 +4,43 @@ layout: default
 ---
 
 .container
-  .row
-  {% for category in site.data.categories %}
-    {% assign articles = site.articles | where:"category", category[0] %}
-    {% assign articlesnapshot = articles | sort:"rank" %}
+  .row.faqs
     .col-md-6
-      %br
-      %h4
-        {{category[1].name}}
-        .badge
-          {{articles | size}}
+    {% for category in site.data.categories limit:3 %}
+      {% assign articles = site.articles | where:"category", category[0] %}
+      {% assign articlesnapshot = articles | sort:"rank" %}
+        %br
+        %h4
+          {{category[1].name}}
+          .badge
+            {{articles | size}}
 
-      %ul.list-unstyled
-      {% for article in articlesnapshot limit:5 %}
-        %li
-          %a{href: "{{article.url}}"}
-            %span.fa.fa-fw.fa-file-text
-            {{article.title}}
-      {% endfor %}
+        %ul.list-unstyled
+        {% for article in articlesnapshot %}
+          %li
+            %a{href: "{{article.url}}"}
+              %span.fa.fa-fw.fa-file-text
+              {{article.title}}
+        {% endfor %}
 
-  {% endfor %}
+    {% endfor %}
+
+  .col-md-6
+    {% for category in site.data.categories limit:3 offset:3 %}
+      {% assign articles = site.articles | where:"category", category[0] %}
+      {% assign articlesnapshot = articles | sort:"rank" %}
+        %br
+        %h4
+          {{category[1].name}}
+          .badge
+            {{articles | size}}
+
+        %ul.list-unstyled
+        {% for article in articlesnapshot %}
+          %li
+            %a{href: "{{article.url}}"}
+              %span.fa.fa-fw.fa-file-text
+              {{article.title}}
+        {% endfor %}
+
+    {% endfor %}
