@@ -140,3 +140,13 @@ li > a {
     color: $brand-primary;
   }
 }
+
+.category {
+  @media (max-width: $screen-xs-max) {
+    margin-top: $grid-gutter-width;
+  }
+
+  h4 {
+    text-transform: capitalize;
+  }
+}
