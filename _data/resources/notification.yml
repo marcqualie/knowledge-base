@@ -1,0 +1,7 @@
+name: Notifications
+actions:
+
+  - operationId: getNotifications
+    summary: Get your notifications
+    method: GET
+    path: /notifications
