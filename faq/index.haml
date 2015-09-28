@@ -9,38 +9,38 @@ layout: default
     {% for category in site.data.categories limit:3 %}
       {% assign articles = site.articles | where:"category", category[0] %}
       {% assign articlesnapshot = articles | sort:"rank" %}
-        %br
-        %h4
-          {{category[1].name}}
-          .badge
-            {{articles | size}}
+      %br
+      %h4
+        {{category[1].name}}
+        .badge
+          {{articles | size}}
 
-        %ul.list-unstyled
-        {% for article in articlesnapshot %}
-          %li
-            %a{href: "{{article.url}}"}
-              %span.fa.fa-fw.fa-file-text
-              {{article.title}}
-        {% endfor %}
+      %ul.list-unstyled
+      {% for article in articlesnapshot %}
+        %li
+          %a{href: "{{article.url}}"}
+            %span.fa.fa-fw.fa-file-text
+            {{article.title}}
+      {% endfor %}
 
     {% endfor %}
 
-  .col-md-6
+    .col-md-6
     {% for category in site.data.categories limit:3 offset:3 %}
       {% assign articles = site.articles | where:"category", category[0] %}
       {% assign articlesnapshot = articles | sort:"rank" %}
-        %br
-        %h4
-          {{category[1].name}}
-          .badge
-            {{articles | size}}
+      %br
+      %h4
+        {{category[1].name}}
+        .badge
+          {{articles | size}}
 
-        %ul.list-unstyled
-        {% for article in articlesnapshot %}
-          %li
-            %a{href: "{{article.url}}"}
-              %span.fa.fa-fw.fa-file-text
-              {{article.title}}
-        {% endfor %}
+      %ul.list-unstyled
+      {% for article in articlesnapshot %}
+        %li
+          %a{href: "{{article.url}}"}
+            %span.fa.fa-fw.fa-file-text
+            {{article.title}}
+      {% endfor %}
 
     {% endfor %}
