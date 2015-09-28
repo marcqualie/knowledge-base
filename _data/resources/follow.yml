@@ -4,7 +4,7 @@ actions:
   - operationId: createFollow
     summary: Create a follow for a user
     method: POST
-    path: /follow
+    path: /follows
     parameters:
     - name: user_id
       type: string
