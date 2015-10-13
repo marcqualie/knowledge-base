@@ -3,13 +3,26 @@ layout: default
 ---
 
 .container
+  .page-heading
+    %h3
+      %a{href: '/faq'} FAQ
+  .row
+  {% for category in site.data.categories %}
+    {% assign articles = site.articles | where:"category", category[0] %}
+    {% assign articlesnapshot = articles | sort:"rank" %}
+    .col-md-6
+      %br
+      %h4
+        {{category[1].name}}
+        .badge
+          {{articles | size}}
 
-{% for article in site.articles %}
+      %ul.list-unstyled
+      {% for article in articlesnapshot limit:5 %}
+        %li
+          %a{href: "{{article.url}}"}
+            %span.fa.fa-fw.fa-file-text
+            {{article.title}}
+      {% endfor %}
 
-  %h3
-    %a{href: "{{ article.url }}"}
-      {{ article.title }}
-  %p {{ article.excerpt }}
-  %br
-
-{% endfor %}
+  {% endfor %}

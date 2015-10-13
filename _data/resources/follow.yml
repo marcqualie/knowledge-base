@@ -1,0 +1,20 @@
+name: Follows
+actions:
+
+  - operationId: readFollows
+    summary: Get the followers of a user
+    method: GET
+    path: /follows
+    parameters:
+    - name: user_id
+      type: string
+      description: GiveyTag or ID of a User
+
+  - operationId: createFollow
+    summary: Create a follow for a user
+    method: POST
+    path: /follows
+    parameters:
+    - name: user_id
+      type: string
+      description: GiveyTag or ID of a User
